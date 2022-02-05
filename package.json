@@ -9,6 +9,7 @@
     "test:ci": "jest --ci"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "@reduxjs/toolkit": "^1.7.2",
     "axios": "^0.25.0",
     "bootstrap": "^5.1.3",
