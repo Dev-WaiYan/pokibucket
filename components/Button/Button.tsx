@@ -5,11 +5,16 @@ interface Props {
   title: string | ReactFragment;
   onClick: () => void;
   styles?: any;
+  className?: string;
 }
 
-function Button({ title, onClick, styles = {} }: Props) {
+function Button({ title, onClick, styles = {}, className = "" }: Props) {
   return (
-    <button style={styles} onClick={onClick} className={classes.btn}>
+    <button
+      style={styles}
+      onClick={onClick}
+      className={`${classes.btn} ${className}`}
+    >
       {title}
     </button>
   );

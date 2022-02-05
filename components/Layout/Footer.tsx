@@ -1,7 +1,7 @@
 import styles from "./layout.module.css";
 function Footer() {
   return (
-    <footer className="text-center">
+    <footer className="mt-4 text-center">
       Powered by{" "}
       <a
         className={styles.link}

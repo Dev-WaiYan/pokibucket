@@ -1,31 +1,44 @@
 import Button from "@/components/Button/Button";
 import Image from "next/image";
+import styles from "./itemCard.module.css";
 
 interface Props {
   id: string;
   title: string;
+  img: string;
   rarity: string;
   price: number;
   stock: number;
 }
 
-function ItemCard({ id, title, rarity, price, stock }: Props) {
+function ItemCard({ id, title, img, rarity, price, stock }: Props) {
   const handleOnClick = () => {};
 
   return (
-    <div className="d-flex flex-column align-items-center">
-      <div>
-        <Image src="/imgs/pokibucket_logo.png" layout="fill" alt="card" />
+    <div className={styles.cardContainer}>
+      <div className={styles.imgContainer}>
+        <Image
+          className={styles.img}
+          src={img}
+          alt="card"
+          width={`150px`}
+          height={`200px`}
+        />
       </div>
-      <div>
-        <h2>{title}</h2>
-        <span>{rarity}</span>
-        <div>
-          <span>${price}</span>
-          <span>{stock} left</span>
+
+      <div className={styles.cardInfoContainer}>
+        <h2 className={styles.title}>{title}</h2>
+        <span className={styles.rarity}>{rarity}</span>
+        <div className={styles.priceAndStockContainer}>
+          <span className="me-2">${price}</span>
+          <span className="ms-2">{stock} left</span>
         </div>
-        <Button title="Select card" onClick={handleOnClick} />
       </div>
+      <Button
+        title="Select card"
+        onClick={handleOnClick}
+        className={styles.btnSelectCard}
+      />
     </div>
   );
 }

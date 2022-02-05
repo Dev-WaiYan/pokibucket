@@ -7,6 +7,7 @@ describe("ItemCard", () => {
       <ItemCard
         id="pk-1"
         title="Pokemon Card"
+        img="https://images.pokemontcg.io/pl1/1.png"
         price={30}
         rarity="rare"
         stock={100}

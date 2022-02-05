@@ -4,7 +4,7 @@
 
 .titleContainer {
   background-color: var(--color-white);
-  padding-top: 10px;
+  padding-top: 30px;
   padding-bottom: 30px;
   width: 100vw;
   text-align: center;
@@ -17,12 +17,15 @@
 }
 
 .logoContainer {
+  border-radius: 50%;
+  background-color: var(--color-white);
   position: relative;
   top: -30px;
 }
 
 .link {
   color: var(--color-black);
+  font-weight: bolder;
 }
 
 .link:hover {
