@@ -1,0 +1,6 @@
+.btn {
+  border-radius: 20px;
+  min-width: 100px;
+  padding: 3px;
+  background-color: var(--color-orange);
+}
