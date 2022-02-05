@@ -15,6 +15,8 @@ const customJestConfig = {
     "^constants/(.*)$": "<rootDir>/constants/$1",
     "^medias/(.*)$": "<rootDir>/medias/$1",
     "^utils/(.*)$": "<rootDir>/utils/$1",
+    "^redux/(.*)$": "<rootDir>/redux/$1",
+    "^mocks/(.*)$": "<rootDir>/mocks/$1",
   },
   testEnvironment: "jest-environment-jsdom",
 };

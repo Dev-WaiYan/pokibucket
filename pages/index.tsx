@@ -6,6 +6,7 @@ import { useState } from "react";
 import { getCards } from "services/cardService";
 import "@fortawesome/fontawesome-free/css/all.css";
 import styles from "./home.module.css";
+import { useAppDispatch, useAppSelector } from "redux/hooks";
 
 export async function getStaticProps() {
   return {
@@ -25,6 +26,10 @@ export default function Home(props: Props) {
   const [currentPage, setCurrentPage] = useState(1);
   const [cards, setCards] = useState(props.cards);
 
+  // Redux
+  const cart = useAppSelector((state) => state.cart);
+  const dispatch = useAppDispatch();
+
   // Handlers - Start
   const showMore = () => {
     setIsLoading(true);
@@ -41,26 +46,27 @@ export default function Home(props: Props) {
       <div className="container">
         <div className="row">
           {cards.map((card) => (
-            <div className="col-sm-4">
-              <ItemCard
-                key={card.id}
-                id={card.id}
-                title={card.name}
-                img={card.images.large}
-                price={card.cardmarket.prices.averageSellPrice}
-                rarity={card.rarity}
-                stock={card.set.total}
-              />
+            <div key={card.id} className="col-sm-4">
+              <ItemCard card={card} />
             </div>
           ))}
         </div>
       </div>
-      <div className="d-flex align-items-center flex-column my-4">
-        {isLoading && <b>Please Wait...</b>}
+      <div className="d-flex align-items-center flex-column mb-5 mt-3">
+        {isLoading && <i>Please Wait...</i>}
         <Button
           title={<i className="fas fa-search">&nbsp;&nbsp;show more</i>}
           onClick={showMore}
           className={styles.btnShowMore}
+        />
+      </div>
+
+      <div className={styles.viewCartContainer}>
+        <span className={styles.countInCart}>{cart.cards.length}</span>
+        <Button
+          title={<i className="fas fa-shopping-cart">&nbsp;&nbsp;View cart</i>}
+          onClick={showMore}
+          className={styles.btnViewCart}
         />
       </div>
     </Layout>

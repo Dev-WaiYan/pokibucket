@@ -1,5 +1,32 @@
 .btnShowMore {
   background-color: var(--color-light-gray);
   color: var(--color-gray);
-  font-weight: normal;
+  font-weight: lighter;
+}
+
+.btnViewCart {
+  background-color: var(--color-light-blue);
+  color: var(--color-white);
+  border-radius: 10px;
+  min-width: 110px;
+}
+
+.countInCart {
+  position: absolute;
+  top: -13px;
+  left: -10px;
+  padding: 7px;
+  border-radius: 50%;
+  color: var(--color-white);
+  background-color: var(--color-light-red);
+}
+
+.viewCartContainer {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: 10px;
+  background-color: var(--color-light-blue);
+  font-size: 12px;
 }

@@ -1,25 +1,25 @@
 import ItemCard from "@/components/Card/ItemCard/ItemCard";
 import { render, screen } from "@testing-library/react";
+import mock_card from "mocks/mock_card";
+import { Provider } from "react-redux";
+import { store } from "redux/store";
+
+const ReduxProvider = ({ children, reduxStore }: any) => (
+  <Provider store={reduxStore}>{children}</Provider>
+);
 
 describe("ItemCard", () => {
   it("renders an item card", () => {
     render(
-      <ItemCard
-        id="pk-1"
-        title="Pokemon Card"
-        img="https://images.pokemontcg.io/pl1/1.png"
-        price={30}
-        rarity="rare"
-        stock={100}
-      />
+      <Provider store={store}>
+        <ItemCard card={mock_card} />
+      </Provider>
     );
 
     const cardImg = screen.getByAltText("card");
-    const cardTitle = screen.getByRole("heading", {
-      name: /Pokemon Card/i,
-    });
-    const price = screen.getByText(/30/i);
-    const rarity = screen.getByText(/rare/i);
+    const cardTitle = screen.getByRole("heading");
+    const price = screen.getByTestId("price");
+    const rarity = screen.getByText(mock_card.rarity);
     const btnSelectCard = screen.getByRole("button");
 
     expect(cardImg).toBeInTheDocument();

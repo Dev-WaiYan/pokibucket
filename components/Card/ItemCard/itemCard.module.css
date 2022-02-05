@@ -43,7 +43,17 @@
   top: 50px;
 }
 
-.btnSelectCard {
+.btnSelectCardContainer {
   position: relative;
   top: -20px;
+}
+
+.btnSelectCard {
+  color: var(--color-black);
+  background-color: var(--color-orange);
+}
+
+.btnSelectCard {
+  color: var(--color-white);
+  background-color: var(--color-black);
 }

@@ -13,6 +13,10 @@ div {
   background-color: var(--color-light-gray);
 }
 
+body {
+  overflow-x: hidden;
+}
+
 a {
   text-decoration: none;
   color: var(--color-gray);

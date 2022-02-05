@@ -2,11 +2,11 @@ interface TcgPlayer {
   url: string;
   updatedAt: string;
   prices: {
-    normal: PriceTypeFields;
-    holofoil: PriceTypeFields;
-    reverseHolofoil: PriceTypeFields;
-    "1stEditionHolofoil": PriceTypeFields;
-    "1stEditionNormal": PriceTypeFields;
+    normal?: PriceTypeFields;
+    holofoil?: PriceTypeFields;
+    reverseHolofoil?: PriceTypeFields;
+    "1stEditionHolofoil"?: PriceTypeFields;
+    "1stEditionNormal"?: PriceTypeFields;
   };
 }
 
