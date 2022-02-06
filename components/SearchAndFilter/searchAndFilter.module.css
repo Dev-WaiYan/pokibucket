@@ -1,0 +1,25 @@
+.search {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 10px 30px;
+  border: none;
+  outline: none;
+  background-color: var(--color-white);
+  color: var(--color-light-gray);
+}
+
+.typeFilter,
+.rarityFilter,
+.setFilter {
+  background-color: var(--color-white);
+  color: var(--color-light-gray);
+  padding: 10px;
+  border: none;
+  outline: none;
+  margin-left: 4px;
+}
+
+.setFilter {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}

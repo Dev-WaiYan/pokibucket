@@ -40,7 +40,7 @@ function ItemCard({ card }: Props) {
         <span className={styles.rarity}>{card.rarity}</span>
         <div className={styles.priceAndStockContainer}>
           <span data-testid="price" className="me-2">
-            ${card.cardmarket.prices.averageSellPrice}
+            ${card.cardmarket && card.cardmarket.prices.averageSellPrice}
           </span>
           <span className="ms-2">{card.set.total} left</span>
         </div>
