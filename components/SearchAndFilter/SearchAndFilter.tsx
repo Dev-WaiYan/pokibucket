@@ -1,12 +1,6 @@
 import Card from "models/Card";
 import ModelSet from "models/ModelSet";
-import {
-  ChangeEvent,
-  Dispatch,
-  SetStateAction,
-  useEffect,
-  useState,
-} from "react";
+import { ChangeEvent, Dispatch, SetStateAction } from "react";
 import Input from "../Input/Input";
 import Select from "../Select/Select";
 import styles from "./searchAndFilter.module.css";
@@ -65,7 +59,7 @@ function SearchAndFilter({
   // Handlers - End
 
   return (
-    <div className="d-flex justify-content-center">
+    <div className="d-flex justify-content-center flex-wrap">
       <Input
         name="name"
         input={searchInputs.name}

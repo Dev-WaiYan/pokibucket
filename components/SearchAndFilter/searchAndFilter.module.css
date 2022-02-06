@@ -23,3 +23,20 @@
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }
+
+@media screen and (max-width: 600px) {
+  .search {
+    width: 90%;
+    border-radius: 20px;
+    box-shadow: 1px 1px 1px #fff;
+  }
+
+  .typeFilter,
+  .rarityFilter,
+  .setFilter {
+    border-radius: 20px;
+    width: 26%;
+    margin: 8px;
+    box-shadow: 1px 1px 1px #fff;
+  }
+}
