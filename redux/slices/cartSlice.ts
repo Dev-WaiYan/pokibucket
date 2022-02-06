@@ -3,12 +3,17 @@ import Card from "models/Card";
 
 // Define a type for the slice state
 interface CartState {
-  cards: Card[];
+  isOpenCart: boolean;
+  values: {
+    quantity: number;
+    card: Card;
+  }[];
 }
 
 // Define the initial state using that type
 const initialState: CartState = {
-  cards: [],
+  isOpenCart: false,
+  values: [],
 };
 
 export const cartSlice = createSlice({
@@ -17,17 +22,58 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     // Use the PayloadAction type to declare the contents of `action.payload`
-    add: (state, action: PayloadAction<Card>) => {
-      state.cards = [...state.cards, action.payload];
+    openCart: (state) => {
+      state.isOpenCart = true;
     },
-    remove: (state, action: PayloadAction<string>) => {
-      state.cards = state.cards.filter((card) => card.id !== action.payload);
+    closeCart: (state) => {
+      state.isOpenCart = false;
+    },
+    add: (state, action: PayloadAction<Card>) => {
+      state.values = [...state.values, { quantity: 1, card: action.payload }];
+    },
+    remove: (state, action: PayloadAction<Card>) => {
+      state.values = state.values.filter(
+        (value) => value.card.id !== action.payload.id
+      );
+    },
+    incrementQuantity: (state, action: PayloadAction<Card>) => {
+      const targetIndex = state.values.findIndex(
+        (v) => v.card.id === action.payload.id
+      );
+      const values = [...state.values];
+      if (values[targetIndex].quantity < action.payload.set.total) {
+        values[targetIndex] = {
+          ...values[targetIndex],
+          quantity: values[targetIndex].quantity + 1,
+        };
+      }
+
+      state.values = values;
+    },
+    decrementQuantity: (state, action: PayloadAction<Card>) => {
+      const targetIndex = state.values.findIndex(
+        (v) => v.card.id === action.payload.id
+      );
+      const values = [...state.values];
+      values[targetIndex] = {
+        ...values[targetIndex],
+        quantity: values[targetIndex].quantity - 1,
+      };
+      state.values = values;
     },
     removeAll: (state) => {
-      state.cards = [];
+      state.values = [];
     },
   },
 });
 
-export const { add, remove, removeAll } = cartSlice.actions;
+export const {
+  openCart,
+  closeCart,
+  add,
+  remove,
+  removeAll,
+  incrementQuantity,
+  decrementQuantity,
+} = cartSlice.actions;
 export default cartSlice.reducer;

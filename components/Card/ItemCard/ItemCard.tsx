@@ -16,7 +16,7 @@ function ItemCard({ card }: Props) {
 
   // Handler - Start
   const handleOnClick = () => {
-    const existingCardInCart = cart.cards.find((c) => c.id === card.id);
+    const existingCardInCart = cart.values.find((v) => v.card.id === card.id);
     if (!existingCardInCart) {
       dispatch(add(card));
     }
@@ -25,7 +25,6 @@ function ItemCard({ card }: Props) {
 
   return (
     <div className={styles.cardContainer}>
-      {console.log("cart.cards", cart.cards)}
       <div className={styles.imgContainer}>
         <Image
           className={styles.img}
@@ -51,7 +50,7 @@ function ItemCard({ card }: Props) {
           title="Select card"
           onClick={handleOnClick}
           className={
-            cart.cards.find((c) => c.id === card.id)
+            cart.values.find((v) => v.card.id === card.id)
               ? styles.btnSelectCard
               : styles.btnSelectedCard
           }

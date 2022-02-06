@@ -23,7 +23,6 @@
 
 .priceAndStockContainer {
   margin: 5px 0;
-  background-color: var(--color-white);
   color: var(--color-gray);
 }
 
@@ -37,7 +36,6 @@
 }
 
 .imgContainer {
-  background-color: var(--color-white);
   border-radius: 10px;
   position: relative;
   top: 50px;
@@ -48,7 +46,7 @@
   top: -20px;
 }
 
-.btnSelectCard {
+.btnSelectedCard {
   color: var(--color-black);
   background-color: var(--color-orange);
 }

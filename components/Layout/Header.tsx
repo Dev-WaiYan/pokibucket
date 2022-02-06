@@ -4,7 +4,9 @@ import Image from "next/image";
 
 function Header() {
   return (
-    <header className="d-flex justify-content-center flex-column align-items-center">
+    <header
+      className={`d-flex justify-content-center flex-column align-items-center ${styles.header}`}
+    >
       <div className={styles.titleContainer}>
         <h1 className={styles.title}>{AppInfo.Title}</h1>
       </div>

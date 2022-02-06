@@ -1,0 +1,174 @@
+.cartContainer {
+  padding: 20px;
+  position: fixed;
+  z-index: 3;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%);
+  min-width: 370px;
+  border-radius: 10px;
+  min-height: 350px;
+  background-color: var(--color-white);
+}
+
+.cartItemsContainer {
+  min-width: 370px;
+  height: 250px;
+  margin: 20px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 10px 20px;
+}
+
+.cardImg {
+  border-radius: 5px;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+.stockContainer {
+  margin-top: 20px;
+}
+
+.stock {
+  color: var(--color-light-red);
+  font-weight: bold;
+}
+
+.perCard {
+  color: var(--color-gray);
+}
+
+.cardLeft {
+  color: var(--color-light-gray);
+}
+
+.totalPricesForACard {
+  color: var(--color-light-blue);
+  font-weight: bolder;
+}
+
+.btnIncrement,
+.btnDecrement,
+.btnDecrementAndRemove {
+  color: var(--color-light-blue);
+  background-color: var(--color-white);
+  min-width: 10px;
+  font-weight: normal;
+  font-size: 0.7rem;
+}
+
+.btnDecrementAndRemove {
+  color: var(--color-light-red);
+}
+
+.quantity {
+  position: relative;
+  right: 20px;
+  color: var(--color-light-blue);
+  font-weight: bolder;
+}
+
+.quantityBtnsContainer {
+  position: relative;
+  top: -50px;
+}
+
+.quantityBtnContainer {
+  height: 20px;
+}
+
+.totalPricesForACardContainer {
+  display: flex;
+  margin-top: 5px;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 70px;
+}
+
+.btnClearAll {
+  text-decoration: underline;
+  background-color: var(--color-white);
+  color: var(--color-gray);
+  font-weight: normal;
+}
+
+.totalCardsCountLabel,
+.totalCardsCount {
+  font-size: 0.8rem;
+  font-weight: bolder;
+}
+
+.totalCardsCount {
+  color: var(--color-light-red);
+}
+
+.totalPriceInCartLabel,
+.totalPriceInCart {
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
+.totalPriceInCart {
+  color: var(--color-light-red);
+}
+
+.btnPay {
+  background-color: var(--color-light-blue);
+  color: var(--color-white);
+}
+
+.btnCloseViewCartContainer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 40px;
+}
+
+.btnCloseViewCart {
+  min-width: 30px;
+  box-shadow: none;
+  font-size: 0.7rem;
+  border-radius: 7px;
+  background-color: var(--color-light-red);
+  color: var(--color-white);
+}
+
+.emptyCartHint {
+  text-align: center;
+  color: var(--color-light-gray);
+}
+
+.warning {
+  text-align: center;
+  color: var(--color-orange);
+}
+
+.paymentProcessStatusContainer {
+  position: fixed;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: var(--color-white);
+  min-width: 250px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.paymentProcessInfoStatusIcon {
+  font-size: 3rem;
+  color: var(--color-light-green);
+  margin: 15px 0;
+}
+
+.btnPaymentProcessInfoStatusClose {
+  position: relative;
+  top: 30px;
+}

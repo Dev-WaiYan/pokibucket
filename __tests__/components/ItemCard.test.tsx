@@ -4,10 +4,6 @@ import mock_card from "mocks/mock_card";
 import { Provider } from "react-redux";
 import { store } from "redux/store";
 
-const ReduxProvider = ({ children, reduxStore }: any) => (
-  <Provider store={reduxStore}>{children}</Provider>
-);
-
 describe("ItemCard", () => {
   it("renders an item card", () => {
     render(

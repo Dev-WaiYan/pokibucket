@@ -7,6 +7,8 @@ import { getCards } from "services/cardService";
 import "@fortawesome/fontawesome-free/css/all.css";
 import styles from "./home.module.css";
 import { useAppDispatch, useAppSelector } from "redux/hooks";
+import Cart from "@/components/Cart/Cart";
+import { openCart } from "redux/slices/cartSlice";
 
 export async function getStaticProps() {
   return {
@@ -39,6 +41,10 @@ export default function Home(props: Props) {
       setIsLoading(false);
     });
   };
+
+  const viewCart = () => {
+    dispatch(openCart());
+  };
   // Handlers - End
 
   return (
@@ -61,14 +67,22 @@ export default function Home(props: Props) {
         />
       </div>
 
-      <div className={styles.viewCartContainer}>
-        <span className={styles.countInCart}>{cart.cards.length}</span>
-        <Button
-          title={<i className="fas fa-shopping-cart">&nbsp;&nbsp;View cart</i>}
-          onClick={showMore}
-          className={styles.btnViewCart}
-        />
-      </div>
+      {!cart.isOpenCart && (
+        <div className={styles.viewCartContainer}>
+          {cart.values.length > 0 && (
+            <span className={styles.countInCart}>{cart.values.length}</span>
+          )}
+          <Button
+            title={
+              <i className="fas fa-shopping-cart">&nbsp;&nbsp;View cart</i>
+            }
+            onClick={viewCart}
+            className={styles.btnViewCart}
+          />
+        </div>
+      )}
+
+      {cart.isOpenCart && <Cart />}
     </Layout>
   );
 }

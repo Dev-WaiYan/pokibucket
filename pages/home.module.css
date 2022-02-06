@@ -1,5 +1,5 @@
 .btnShowMore {
-  background-color: var(--color-light-gray);
+  background-color: var(--color-pearl-white);
   color: var(--color-gray);
   font-weight: lighter;
 }
@@ -27,6 +27,10 @@
   left: 50%;
   transform: translate(-50%);
   border-radius: 10px;
-  background-color: var(--color-light-blue);
+  background-color: red;
   font-size: 12px;
+}
+
+.loadMoreContainer {
+  background-color: var(--color-gray);
 }
